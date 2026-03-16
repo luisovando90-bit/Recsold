@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de Equipos | Recsold Ltda.</title>
+    <style>
+        :root {
+            --azul-corporativo: #1c2b5e; 
+            --verde-industrial: #27ae60;
+            --naranja-venta: #e67e22;
+            --blanco: #FFFFFF;
+            --gris-fondo: #f4f7f9;
+            --texto-oscuro: #2c3e50;
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            background-color: var(--gris-fondo); 
+            color: var(--texto-oscuro);
+        }
+
+        /* Navegación */
+        nav { 
+            background: var(--blanco); 
+            padding: 15px 10%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo-img { height: 50px; }
+
+        .btn-volver {
+            text-decoration: none;
+            color: var(--azul-corporativo);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Cabecera de Ventas */
+        .ventas-header {
+            background: var(--azul-corporativo);
+            color: white;
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .ventas-header h1 { margin: 0; font-size: 2.5rem; }
+        .ventas-header p { opacity: 0.8; font-size: 1.1rem; }
+
+        /* Contenedor de Catálogo */
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+
+        .catalogo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Tarjeta de Producto */
+        .producto-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .producto-card:hover { transform: translateY(-5px); }
+
+        .producto-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .producto-body { padding: 20px; }
+
+        .categoria {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--verde-industrial);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .producto-body h3 { margin: 10px 0; color: var(--azul-corporativo); }
+
+        .especificaciones {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .especificaciones li {
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+        }
+
+        .precio {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--naranja-venta);
+            margin: 20px 0;
+            display: block;
+        }
+
+        .btn-consultar {
+            display: block;
+            text-align: center;
+            background: var(--verde-industrial);
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-consultar:hover { background: #1e8449; }
+
+        footer { text-align: center; padding: 40px; color: #999; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">
+            <img src="logo-recsold.jpg" alt="Recsold" class="logo-img">
+        </a>
+        <a href="index.html" class="btn-volver">← Volver al Inicio</a>
+    </nav>
+
+    <header class="ventas-header">
+        <h1>Catálogo de Equipos/Activos Usados</h1>
+        <p>Activos para venta con mantención al día.</p>
+    </header>
+
+    <main class="container">
+        
+        <div class="catalogo-grid">
+
+            <article class="producto-card">
+                <img src="venta-equipo1.jpg" alt="Camión Tolva" class="producto-img">
+                <div class="producto-body">
+                    <span class="categoria">Transporte Pesado</span>
+                    <h3>Semirremolque Tolva 20m³</h3>
+                    <ul class="especificaciones">
+                        <li><span>Año:</span> <strong>2018</strong></li>
+                        <li><span>Marca:</span> <strong>Randon</strong></li>
+                        <li><span>Estado:</span> <strong>Operativo 100%</strong></li>
+                    </ul>
+                    <span class="precio">$18.500.000 + IVA</span>
+                    <a href="https://wa.me/56994487541?text=Hola,%20me%20interesa%20la%20Tolva%2020m3" class="btn-consultar" target="_blank">Consultar por WhatsApp</a>
+                </div>
+            </article>
+
+            <article class="producto-card">
+                <img src="venta-equipo2.jpg" alt="Tractocamión" class="producto-img">
+                <div class="producto-body">
+                    <span class="categoria">Tracto</span>
+                    <h3>Tractocamión 6x4 High Roof</h3>
+                    <ul class="especificaciones">
+                        <li><span>Año:</span> <strong>2015</strong></li>
+                        <li><span>Kilometraje:</span> <strong>450.000 km</strong></li>
+                        <li><span>Tracción:</span> <strong>6x4</strong></li>
+                    </ul>
+                    <span class="precio">Consultar Precio</span>
+                    <a href="https://wa.me/56994487541?text=Hola,%20me%20interesa%20el%20Tractocamion%206x4" class="btn-consultar" target="_blank">Consultar por WhatsApp</a>
+                </div>
+            </article>
+
+            <article class="producto-card">
+                <img src="venta-equipo3.jpg" alt="Semirremolque" class="producto-img">
+                <div class="producto-body">
+                    <span class="categoria">Logística</span>
+                    <h3>Semirremolque Plano 3 Ejes</h3>
+                    <ul class="especificaciones">
+                        <li><span>Año:</span> <strong>2019</strong></li>
+                        <li><span>Largo:</span> <strong>13.5 Metros</strong></li>
+                        <li><span>Suspensión:</span> <strong>Neumática</strong></li>
+                    </ul>
+                    <span class="precio">$12.000.000 + IVA</span>
+                    <a href="https://wa.me/56994487541?text=Hola,%20me%20interesa%20el%20Semirremolque%20Plano" class="btn-consultar" target="_blank">Consultar por WhatsApp</a>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 RECSOLD LTDA. | División de Ventas | Puerto Aysén
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Recsold Ltda.</title>
+    <style>
+        :root {
+            --azul-corporativo: #1c2b5e; 
+            --verde-industrial: #27ae60;
+            --naranja-venta: #e67e22;
+            --blanco: #FFFFFF;
+            --gris-fondo: #f4f7f9;
+            --texto-oscuro: #2c3e50;
+        }
+
+        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--texto-oscuro); background-color: var(--gris-fondo); line-height: 1.6; }
+        
+        /* Navegación */
+        nav { 
+            background: var(--blanco); padding: 15px 10%; display: flex; justify-content: space-between; 
+            align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; 
+        }
+        
+        .logo-img { height: 60px; width: auto; transition: 0.3s; }
+        .logo-img:hover { opacity: 0.8; transform: scale(1.02); }
+
+        .nav-links { display: flex; align-items: center; }
+        
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--azul-corporativo); 
+            margin-left: 25px; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--verde-industrial); }
+
+        /* Estilo especial para el botón de Ventas */
+        .btn-nav-ventas {
+            color: var(--naranja-venta) !important;
+            border: 2px solid var(--naranja-venta);
+            padding: 5px 12px;
+            border-radius: 5px;
+        }
+
+        .btn-nav-ventas:hover {
+            background: var(--naranja-venta);
+            color: white !important;
+        }
+
+        .container { max-width: 1100px; margin: 40px auto; padding: 20px; }
+        .seccion-titulo { color: var(--azul-corporativo); text-align: center; margin-bottom: 40px; }
+        .seccion-titulo::after { content: ''; display: block; width: 60px; height: 4px; background: var(--verde-industrial); margin: 10px auto; }
+
+        /* Layout */
+        .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+
+        .formulario-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 5px; color: var(--azul-corporativo); font-size: 0.9rem; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-family: inherit; box-sizing: border-box; }
+        
+        .btn-enviar { background: var(--azul-corporativo); color: white; padding: 15px 30px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; transition: background 0.3s; }
+        .btn-enviar:hover { background: var(--verde-industrial); }
+
+        .info-detalles { background: var(--azul-corporativo); color: white; padding: 25px; border-radius: 12px; }
+        .mapa-contenedor { height: 300px; border-radius: 12px; overflow: hidden; border: 1px solid #ddd; margin-top: 20px; }
+
+        footer { background: var(--azul-corporativo); color: #bdc3c7; padding: 40px 10%; text-align: center; margin-top: 50px; }
+        .btn-atras { display: inline-block; margin-bottom: 20px; text-decoration: none; color: var(--azul-corporativo); font-weight: bold; }
+
+        @media (max-width: 768px) { .contacto-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">
+        <img src="logo-recsold.jpg" alt="Recsold Ltda Logo" class="logo-img">
+    </a>
+    
+    <div class="nav-links">
+        <a href="index.html#historia">Compañía</a>
+        <a href="index.html#galeria">Equipos y Faenas</a>
+        <a href="ventas.html" class="btn-nav-ventas">Equipos Usados</a>
+        <a href="contactorecsold.html">Contacto</a>		
+    </div>
+</nav>
+
+    <main class="container">
+        <a href="index.html" class="btn-atras">← Volver al Inicio</a>
+        <h2 class="seccion-titulo">Contacto Corporativo</h2>
+
+        <div class="contacto-grid">
+            <div class="formulario-card">
+                <h3>Envíenos un mensaje</h3>
+                <form action="https://formsubmit.co/contacto@recsold.cl" method="POST">
+                    <div class="form-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" name="nombre" placeholder="Ej: Juan Pérez" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" name="email" placeholder="correo@empresa.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mensaje</label>
+                        <textarea name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar">ENVIAR CONSULTA</button>
+                    <input type="hidden" name="_next" value="https://recsold.cl/gracias.html">
+                </form>
+            </div>
+
+            <div class="info-card">
+                <div class="info-detalles">
+                    <h4 style="margin-top:0; color: var(--verde-industrial);">Información Directa</h4>
+                    <p>📍 KM 4 ruta 240 - Puerto Aysén a Puerto Chacabuco</p>
+                    <p>📧 contacto@recsold.cl</p>
+                    <p>📞 +56 9 9448 7541</p>
+                </div>
+                <div class="mapa-contenedor">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10000!2d-72.69!3d-45.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v123456789" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 RECSOLD LTDA. | Región de Aysén, Chile</p>
+    </footer>
+
+</body>
+</html>

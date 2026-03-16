@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargas Especiales e IMO | Recsold Ltda.</title>
+    <style>
+        :root {
+            --azul-corporativo: #1c2b5e; 
+            --verde-industrial: #27ae60;
+            --rojo-peligro: #c0392b; /* Color para destacar IMO */
+            --blanco: #FFFFFF;
+            --gris-fondo: #f4f7f9;
+            --texto-oscuro: #2c3e50;
+        }
+
+        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--texto-oscuro); background-color: var(--gris-fondo); line-height: 1.6; }
+        
+        /* Navegación Simplificada */
+        nav { 
+            background: var(--blanco); padding: 15px 10%; display: flex; justify-content: space-between; 
+            align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; 
+        }
+        .logo-img { height: 60px; width: auto; }
+
+        .btn-volver-inicio {
+            text-decoration: none; color: var(--azul-corporativo); font-weight: 700;
+            text-transform: uppercase; font-size: 0.8rem; display: flex;
+            align-items: center; gap: 8px; padding: 8px 16px;
+            border: 2px solid var(--azul-corporativo); border-radius: 5px; transition: 0.3s;
+        }
+        .btn-volver-inicio:hover { background: var(--azul-corporativo); color: white; }
+
+        .container { max-width: 1100px; margin: 40px auto; padding: 20px; }
+        
+        /* Encabezado con borde rojo para indicar especialización en carga peligrosa */
+        .header-detalle { 
+            background: white; padding: 40px; border-radius: 12px; 
+            border-left: 8px solid var(--rojo-peligro);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .header-detalle h1 { color: var(--azul-corporativo); margin: 0; font-size: 2rem; }
+        .header-detalle p { font-size: 1.1rem; color: #666; margin-top: 10px; }
+
+        /* Cuadrícula de Categorías IMO */
+        .grid-imos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .imo-card {
+            background: white; padding: 25px; border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--azul-corporativo);
+        }
+
+        .imo-card h3 { color: var(--rojo-peligro); margin-top: 0; display: flex; align-items: center; gap: 10px; }
+        .imo-card p { font-size: 0.95rem; }
+        .lista-check { list-style: none; padding: 0; margin-top: 15px; }
+        .lista-check li { margin-bottom: 8px; font-size: 0.9rem; display: flex; align-items: center; gap: 10px; }
+        .lista-check li::before { content: "✓"; color: var(--verde-industrial); font-weight: bold; }
+
+        /* Galería de Operaciones */
+        .galeria-especial {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px; margin-top: 40px;
+        }
+        .foto-operativo {
+            background: white; padding: 12px; border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center;
+        }
+        .foto-operativo img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; }
+        .foto-operativo span { display: block; margin-top: 10px; font-weight: 700; color: var(--azul-corporativo); font-size: 0.85rem; }
+
+        footer { background: var(--azul-corporativo); color: #bdc3c7; padding: 40px 10%; text-align: center; margin-top: 50px; }
+
+        @media (max-width: 768px) { .btn-volver-inicio span { display: none; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">
+            <img src="logo-recsold.jpg" alt="Recsold Ltda Logo" class="logo-img">
+        </a>
+        <a href="index.html" class="btn-volver-inicio">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+            </svg>
+            <span>Volver al Inicio</span>
+        </a>
+    </nav>
+
+    <main class="container">
+        
+        <div class="header-detalle">
+            <h1>Movimientos de Carga Especial</h1>
+            <p>Transporte especializado de sustancias peligrosas bajo protocolos de seguridad y normativa vigente.</p>
+        </div>
+
+        <div class="grid-imos">
+            <div class="imo-card">
+                <h3>⚠️ Carga IMO 1.1</h3>
+                <p>Transporte de explosivos con riesgo de explosión en masa. Operativos con escolta y planes de ruta aprobados.</p>
+                <ul class="lista-check">
+                    <li>Conductores con licencia A5 especial.</li>
+                    <li>Unidades con kit de seguridad completo.</li>
+                    <li>Resoluciones sanitarias al día.</li>
+                </ul>
+            </div>
+
+            <div class="imo-card">
+                <h3>🛢️ Clase 5 y Líquidos</h3>
+                <p>Movimiento de comburentes, peróxidos orgánicos y aceites industriales para el sector de la salmonicultura.</p>
+                <ul class="lista-check">
+                    <li>Contención de derrames.</li>
+                    <li>Transporte de aceites a granel.</li>
+                    <li>Control de temperatura si se requiere.</li>
+                </ul>
+            </div>
+
+            <div class="imo-card">
+                <h3>Movimiento cargas especiales</h3>
+                <p>Gestión y traslado desde faenas lugar de destino final.</p>
+                <ul class="lista-check">
+                    <li>Trazabilidad en caso de ser requerida.</li>
+                    <li>Entrega en lugares apartados.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 style="color: var(--azul-corporativo); margin-top: 50px;">Galería de Operativos Especiales</h2>
+        <div class="galeria-especial">
+            <div class="foto-operativo">
+                <img src="imo-1.jpg" alt="Transporte Explosivos">
+                <span>Traslado de IMO 1.1 - Explosivos - Ejercito de Chile</span>
+            </div>
+            <div class="foto-operativo">
+                <img src="imo-2.jpg" alt="Transporte Aceites">
+                <span>Movimiento de carga de Aceites Industriales</span>
+            </div>
+            <div class="foto-operativo">
+                <img src="imo-3.jpg" alt="Residuos">
+                <span>Traslado Equipo Frigorífico a Isla Huichas</span>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 RECSOLD LTDA. | Seguridad en Transportes Críticos</p>
+    </footer>
+
+</body>
+</html>
