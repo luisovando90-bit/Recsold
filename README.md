@@ -1,1 +1,291 @@
-# Recsold
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recsold Ltda. | Logística Pesada y Proyectos Aysén</title>
+    
+    <style>
+        :root {
+            --azul-corporativo: #1c2b5e; 
+            --verde-industrial: #27ae60;
+            --blanco: #FFFFFF;
+            --gris-fondo: #f4f7f9;
+            --texto-oscuro: #2c3e50;
+            --whatsapp-color: #25d366;
+            --naranja-venta: #e67e22;
+        }
+
+        * { box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            color: var(--texto-oscuro); 
+            line-height: 1.8; 
+            background-color: var(--gris-fondo); 
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* Navegación */
+        nav { 
+            background: var(--blanco); 
+            padding: 15px 10%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+
+        .logo-img { height: 60px; width: auto; transition: 0.3s; }
+        .logo-img:hover { opacity: 0.8; transform: scale(1.02); }
+
+        .nav-links { display: flex; align-items: center; }
+
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--azul-corporativo); 
+            margin-left: 30px; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+            letter-spacing: 1px; 
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--verde-industrial); }
+
+        .btn-ventas {
+            color: var(--naranja-venta) !important;
+            border: 2px solid var(--naranja-venta);
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        .btn-ventas:hover {
+            background: var(--naranja-venta);
+            color: white !important;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(28, 43, 94, 0.85), rgba(28, 43, 94, 0.6)), 
+                        url('fondo-recsold.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            height: 60vh; 
+            color: var(--blanco);
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center;
+            padding: 0 10%;
+        }
+
+        .hero h1 { font-size: 3.5rem; margin: 0; letter-spacing: -1px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.2rem; margin-top: 15px; max-width: 900px; opacity: 0.9; font-weight: 300; }
+
+        .container { max-width: 1200px; margin: auto; padding: 60px 20px; }
+        
+        .seccion-titulo { color: var(--azul-corporativo); text-align: center; margin-bottom: 40px; font-size: 2.2rem; }
+        .seccion-titulo::after { 
+            content: ''; 
+            display: block; 
+            width: 60px; 
+            height: 4px; 
+            background: var(--verde-industrial); 
+            margin: 15px auto; 
+        }
+
+        /* Galería */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .galeria-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 300px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .galeria-item:hover img { transform: scale(1.1); }
+
+        .galeria-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(28, 43, 94, 0.9));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .galeria-item:hover .galeria-info { transform: translateY(0); }
+
+        /* Historia Mejorada */
+        #historia {
+            margin-top: 80px; 
+            background: white; 
+            padding: 60px; 
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .historia-texto {
+            column-count: 2;
+            column-gap: 40px;
+            text-align: justify;
+        }
+
+        /* WhatsApp */
+        .wsp-container { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            z-index: 2000; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .wsp-text {
+            background: white;
+            color: var(--texto-oscuro);
+            padding: 8px 15px;
+            border-radius: 20px 20px 0 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+            animation: pulse-text 2s infinite;
+        }
+
+        .wsp-float { 
+            width: 60px; height: 60px; 
+            background-color: var(--whatsapp-color); 
+            color: white; border-radius: 50px; 
+            display: flex; align-items: center; justify-content: center; 
+            text-decoration: none; 
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); 
+            transition: 0.3s;
+        }
+        .wsp-float:hover { transform: scale(1.1); }
+
+        @keyframes pulse-text {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }
+        }
+
+        footer { background: var(--azul-corporativo); color: #bdc3c7; padding: 60px 10% 20px; text-align: center; }
+
+        @media (max-width: 768px) {
+            .historia-texto { column-count: 1; }
+            .wsp-text { display: none; } /* En móvil mejor ocultar el texto para no tapar */
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="recsold-inicio.html">
+            <img src="logo-recsold.jpg" alt="Recsold Ltda Logo" class="logo-img">
+        </a>
+        <div class="nav-links">
+            <a href="#historia">Compañía</a>
+            <a href="#galeria">Equipos y Faenas</a>
+            <a href="ventas.html" class="btn-ventas">Equipos Usados</a>
+            <a href="contactorecsold.html">Contacto</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>RECSOLD LTDA.</h1>
+        <p>Transporte y Logística en la Carretera Austral desde Chaitén hasta Villa O'Higgins, enfrentando climas extremos y terrenos complejos con seguridad y experiencia.</p>
+    </header>
+
+    <main class="container">
+        
+        <section id="galeria">
+            <h2 class="seccion-titulo">Equipos y Operaciones en Terreno</h2>
+            <div class="galeria-grid">
+                <a href="equipos-articulados.html" style="text-decoration: none;">
+                    <div class="galeria-item">
+                        <img src="equipo1.jpg" alt="Camión Articulado">
+                        <div class="galeria-info">
+                            <h4>Unidades Articuladas</h4>
+                            <p>Ver galería y detalles técnicos.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="operaciones-ruta.html" style="text-decoration: none;">
+                    <div class="galeria-item">
+                        <img src="faena1.jpg" alt="Operación en Aysén">
+                        <div class="galeria-info">
+                            <h4>Operaciones en Ruta</h4>
+                            <p>Ver despliegue en Carretera Austral.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="cargas-especiales.html" style="text-decoration: none;">
+                    <div class="galeria-item">
+                        <img src="taller1.jpg" alt="Movimientos de Carga IMO">
+                        <div class="galeria-info">
+                            <h4>Movimientos de Carga</h4>
+                            <p>Cargas IMO 1.1, Clase 5 y Residuos.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="historia">
+            <h2 class="seccion-titulo">Nuestra Trayectoria</h2>
+            <div class="historia-texto">
+                <p>
+                    Fundada el 19 de noviembre de 2013 por don Agustín Reyes y su esposa, Recsold nació de una visión compartida: ser protagonistas del progreso de la Región de Aysén. Como conocedores profundos de esta tierra, sus fundadores transformaron su experiencia en una empresa dedicada a fortalecer la conectividad y el desarrollo local.
+                </p>
+                <p>
+                    En nuestros inicios, nos consolidamos a través de la especialización técnica en servicios de soldadura, reparación de equipos y construcción. Esta etapa forjó nuestro ADN, marcado por la precisión técnica y los más altos estándares de seguridad industrial.
+                </p>
+                <p>
+                    Hoy, impulsados por el afán de apoyar el crecimiento regional, hemos evolucionado para especializarnos en el transporte de carga pesada. Con un equipo experto de conocedores de la Patagonia, nos dedicamos a movilizar el futuro de Aysén, siendo el aliado estratégico de quienes, al igual que nosotros, apuestan por el potencial de nuestra región.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 RECSOLD LTDA. | Puerto Aysén, Región de Aysén, Chile</p>
+    </footer>
+
+    <div class="wsp-container">
+        <div class="wsp-text">¿Qué necesitas movilizar?</div>
+        <a href="https://wa.me/56994487541" class="wsp-float" target="_blank">
+            <svg width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.601 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+        </a>
+    </div>
+
+</body>
+</html>
